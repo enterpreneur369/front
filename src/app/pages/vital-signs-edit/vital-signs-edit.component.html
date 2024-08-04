@@ -1,0 +1,58 @@
+<form [formGroup]="form" class="example-container" (submit)="operate()">
+
+  <div [hidden]="true">
+      <mat-form-field>
+          <input matInput placeholder="ID" required formControlName="idSign">
+      </mat-form-field>
+
+      <mat-form-field>
+          <input matInput placeholder="idPatient" required formControlName="idPatient">
+      </mat-form-field>
+  </div>
+
+  <mat-form-field>
+      <input matInput placeholder="patient" required formControlName="patient">
+      @if (f['patient'].errors?.['required'] && f['patient'].touched) {
+          <small class="invalid">Is required</small>
+      }
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="date" required formControlName="date">
+    @if (f['date'].errors?.['required'] && f['date'].touched) {
+        <small class="invalid">Is required</small>
+    }
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="temperature" required formControlName="temperature">
+    @if (f['temperature'].errors?.['required'] && f['temperature'].touched) {
+        <small class="invalid">Is required</small>
+    }
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="pulse" required formControlName="pulse">
+    @if (f['pulse'].errors?.['required'] && f['pulse'].touched) {
+        <small class="invalid">Is required</small>
+    }
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="respiratoryRhythm" required formControlName="respiratoryRhythm">
+    @if (f['respiratoryRhythm'].errors?.['required'] && f['respiratoryRhythm'].touched) {
+        <small class="invalid">Is required</small>
+    }
+  </mat-form-field>
+
+
+  <button mat-button color="primary" type="submit">
+      <mat-icon>done</mat-icon>
+      <span>Done</span>
+  </button>
+
+  <button mat-button color="accent" type="button" routerLink="/account/vital-signs">
+      <mat-icon>cancel</mat-icon>
+      <span>Cancel</span>
+  </button>
+</form>
